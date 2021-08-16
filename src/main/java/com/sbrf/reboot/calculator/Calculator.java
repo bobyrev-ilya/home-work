@@ -1,6 +1,7 @@
 package com.sbrf.reboot.calculator;
 
 public class Calculator {
+
     public static int getAddition(int a, int b) {
         return a + b;
     }
@@ -18,7 +19,7 @@ public class Calculator {
     }
 
     public static void infoMessage() {
-        System.out.println("Теперь я знаю, что такое форк");
+        System.out.print("Теперь я знаю, что такое форк");
     }
 
     public static long getSquare(int a) {
