@@ -31,6 +31,7 @@
         <junit-jupiter.version>5.7.2</junit-jupiter.version>
         <mockito-core.version>3.11.2</mockito-core.version>
         <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
+        <junit.version>4.13.2</junit.version>
     </properties>
 
     <dependencies>
@@ -55,7 +56,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>RELEASE</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
