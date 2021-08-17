@@ -8,6 +8,8 @@ import org.mockito.Mockito;
 import java.util.HashSet;
 import java.util.Set;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.when;
 
 class AccountServiceTest {
@@ -19,17 +21,21 @@ class AccountServiceTest {
 
     @BeforeEach
     void setUp() {
+        //какой-то источник аккаунтов
         accountRepository = Mockito.mock(AccountRepository.class);
 
+        //обработчик источника аккаунтов
         accountService = new AccountService(accountRepository);
     }
 
     @Test
     void bookExist() {
+        // создаем список с новым аккаунтом
         Account account = new Account("ACC1234NUM");
         Set<Account> accounts = new HashSet();
         accounts.add(account);
 
+        //заглушка: возвращаем ранее созданный Set аккаунтов
         when(accountRepository.getAllAccountsByClientId(1L)).thenReturn(accounts);
 
         assertTrue(accountService.isAccountExist(1L, account));
