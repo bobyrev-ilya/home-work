@@ -1,8 +1,14 @@
 package com.sbrf.reboot.service;
 
 import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+
 
 @AllArgsConstructor
+@EqualsAndHashCode(of = {"number"})
 public class Account {
-    private String accountNumber; //номер аккаунта
+    @Getter
+    private String number; //номер аккаунта
+
 }
