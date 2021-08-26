@@ -5,9 +5,9 @@ import lombok.AllArgsConstructor;
 import java.util.ArrayList;
 
 @AllArgsConstructor
-public class Cassette<Banknote> {
+public class Cassette<T extends Banknote> {
 
-    ArrayList<Banknote> banknotes;
+    ArrayList<T> banknotes;
 
     public int getCountBanknotes() {
         return banknotes.size();
