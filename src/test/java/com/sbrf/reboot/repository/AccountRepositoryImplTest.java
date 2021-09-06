@@ -28,9 +28,9 @@ class AccountRepositoryImplTest {
             e.printStackTrace();
         }
         Set<Account> accounts = new HashSet() {{
-            add(new Account("2-ACCNUM"));
-            add(new Account("1-ACCNUM"));
-            add(new Account("4-ACC1NUM"));
+            add(Account.builder().number("2-ACCNUM").build());
+            add(Account.builder().number("1-ACCNUM").build());
+            add(Account.builder().number("4-ACC1NUM").build());
         }};
 
         assertTrue(accounts.containsAll(allAccountsByClientId));
@@ -45,7 +45,7 @@ class AccountRepositoryImplTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Assertions.assertTrue(allAccountsByClientId.contains(new Account("5-ACC1NUM")));
+        Assertions.assertTrue(allAccountsByClientId.contains(Account.builder().number("5-ACC1NUM").build()));
     }
 
     @Test

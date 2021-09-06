@@ -31,8 +31,7 @@ class AccountServiceTest {
 
     @Test
     void bookExist() throws IOException {
-        // создаем список с новым аккаунтом
-        Account account = new Account("ACC1234NUM");
+        Account account = Account.builder().number("ACC1234NUM").build();
         Set<Account> accounts = new HashSet();
         accounts.add(account);
 
@@ -45,10 +44,10 @@ class AccountServiceTest {
     @Test
     void bookNotExist() throws IOException {
         Set<Account> accounts = new HashSet();
-        accounts.add(new Account("ACC1234NUM"));
+        accounts.add(Account.builder().number("ACC1234NUM").build());
 
         when(accountRepository.getAllAccountsByClientId(1L)).thenReturn(accounts);
 
-        assertFalse(accountService.isAccountExist(1L, new Account("ACC456NUM")));
+        assertFalse(accountService.isAccountExist(1L, Account.builder().number("ACC1234NUM").build()));
     }
 }
