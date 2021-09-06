@@ -1,14 +1,19 @@
 package com.sbrf.reboot.service;
 
-import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
 
 
-@AllArgsConstructor
+@Builder
+@Data
 @EqualsAndHashCode(of = {"number"})
 public class Account {
-    @Getter
     private String number; //номер аккаунта
-
+    private long id;
+    private LocalDate createDate;
+    private BigDecimal balance;
 }
