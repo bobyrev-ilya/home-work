@@ -13,6 +13,7 @@ import java.time.LocalDate;
 @EqualsAndHashCode(of = {"number"})
 public class Account {
     private String number; //номер аккаунта
+    private long clientId;
     private long id;
     private LocalDate createDate;
     private BigDecimal balance;
