@@ -37,6 +37,7 @@
         <jackson-databind.version>2.12.4</jackson-databind.version>
         <jackson-dataformat-xml.version>2.11.1</jackson-dataformat-xml.version>
         <junit.version>4.13.2</junit.version>
+        <reactor-bom.version>2020.0.11</reactor-bom.version>
     </properties>
 
     <dependencies>
@@ -79,7 +80,28 @@
             <artifactId>javax.servlet-api</artifactId>
             <version>4.0.1</version>
         </dependency>
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-test</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.projectreactor</groupId>
+                <artifactId>reactor-bom</artifactId>
+                <version>${reactor-bom.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>
